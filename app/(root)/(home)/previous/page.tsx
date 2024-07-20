@@ -1,3 +1,4 @@
+import CallList from '@/components/CallList'
 import React from 'react'
 
 const Previous = () => {
@@ -7,6 +8,7 @@ return (
             Previous
         </h1>
         
+        <CallList type='ended' />
     </section>
 )
 }
