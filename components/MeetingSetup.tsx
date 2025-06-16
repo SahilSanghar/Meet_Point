@@ -11,10 +11,6 @@ const MeetingSetup = ({ setIsSetupComplete }: {
 
     const call = useCall();
 
-    if(!call) {
-        throw new Error('useCall must be used within StreamCall component')
-    }
-
     useEffect(() => {
         if(isMicCamToggledOn) {
             call?.camera.disable();
@@ -25,6 +21,11 @@ const MeetingSetup = ({ setIsSetupComplete }: {
         }
     }, [isMicCamToggledOn, call?.camera, call?.microphone])
     
+    
+    if(!call) {
+        throw new Error('useCall must be used within StreamCall component')
+    };
+
 return (
     <div className="flex h-screen w-full flex-col items-center justify-center gap-3 text-white">
         <h1 className="text-2xl font-bold">Setup</h1>
